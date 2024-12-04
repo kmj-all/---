@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>르주르</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+     <link rel="stylesheet" href="css/style.css">
+     <script src="lib/jquery-3.7.1.min.js"></script>
+     <script>
+
+        $(function(){
+
+            $('.gnb > li , .depth02_wrap').mouseenter(function(){
+
+                $(this).find('.depth02_wrap').stop().slideDown();
+
+            });
+
+            $('.depth02_wrap').mouseleave(function(){
+
+            $(this).stop().slideUp();
+
+            });
+
+            let search = $('.user_menu .search img');
+
+            search.click(function(){
+
+                $('.search_box').stop().slideToggle();
+
+            }); //검색창
+
+            let header = $('.header');
+
+            window.addEventListener('scroll',() =>{
+
+            let i = 0;        
+            let scrollBar = window.scrollY
+            if(i < scrollBar){
+                header.addClass('active');
+            } else {
+                header.removeClass('active');
+            }
+
+            }); //헤더 크기
+
+        
+
+
+
+
+
+
+
+            //아이템 슬라이드
+
+            let menu = document.querySelectorAll('.LeJour_item .LeJour_menu > li');
+            let itemWrap = document.querySelectorAll('.LeJour_item .itemSwiper');
+
+            for(let i = 0; i < menu.length; i++){
+                menu[i].addEventListener('click', () => {
+
+                    menu.forEach(menuItem =>{
+                        menuItem.classList.remove('active')
+                    });
+
+                
+
+                    menu[i].classList.add('active')
+
+                    itemWrap.forEach(itemWrap =>{
+                        itemWrap.classList.remove('active')
+                    });
+
+                    itemWrap[i].classList.add('active')
+
+                });
+
+            }
+
+
+           
+
+
+        });
+     </script>
+    
+</head>
+
+<body>
+    <header class="header">
+        <div class="inner">
+            <h1 class="logo">
+                <a href="#"><img src="img/logo.png" alt="Le Jour"></a>
+            </h1><!-- .logo end -->
+
+            <nav class="nav">
+                <ul class="gnb">
+                    <li>
+                        <a href="#" class="depth01">BRAND STORY</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="depth01">PRODUCT</a>
+                        <div class="depth02_wrap">
+                            <div class="inner">
+                                <ul class="depth02">
+                                    <li>
+                                        <a href="#">Le Jour SET</a>
+                                        <ul class="depth03">
+                                            <li><a href="#">세탁세제 & 섬유유연제</a></li>
+                                            <li><a href="#">주방용품</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Le Jour PRODUCT</a>
+                                        <ul class="depth03">
+                                            <li><a href="#">세탁세제 & 섬유유연제</a></li>
+                                            <li><a href="#">주방/탈취 용품</a></li>
+                                            <li><a href="#">욕실용품</a></li>
+                                            <li><a href="#">세탁보조제</a></li>
+                                            <li><a href="#">기프트 액세서리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Le Jour COSMETICS</a>
+                                        <ul class="depth03">
+                                            <li><a href="#">로션/크림</a></li>
+                                        </ul>
+                                    </li>
+                                </ul><!-- .depth02 end -->
+                                <div class="depth02-image">
+                                    <img src="img/header-nav-product.jpg" alt="르브르 메뉴 제품 이미지">
+                                </div><!-- .depth02-image end -->
+                            </div>
+
+                        </div><!-- .depth02-inner  end -->
+                    </li>
+
+                    <li><a href="#" class="depth01">CONTENTS</a></li>
+                    <li><a href="#" class="depth01">REVIEW</a></li>
+                    <li><a href="#" class="depth01">Q&A</a></li>
+                    <li><a href="#" class="depth01">NOTICE</a></li>
+                    <li><a href="#" class="depth01">EVENT</a></li>
+                    <li><a href="#" class="depth01">MEMBERSHIP</a></li>
+                </ul><!-- .gnb -->
+            </nav><!-- .nav nav-pc end -->
+
+                <div class="util">
+                    <div class="lang-btn">
+                        <div>LANGUAGES</div>
+                        <ul>
+                            <li><a href="#">Korean</a></li>
+                            <li><a href="#">English</a></li>
+                        </ul>
+                    </div><!-- lang-btn end -->
+
+                    <ul class="user_menu">
+                        <li><a href="#">LOGIN</a></li>
+                        <li><a href="#">JOIN</a></li>
+                        <li><a href="#">CART<img src="img/icon-cart.png" alt="장바구니"></a></li>
+                        <li class="search">
+                            <a href="#"><img src="img/icon-search.png" alt="검색하기"></a>
+                        <div class="search_box">
+                            <div class="search_box_in">
+                            <input type="text" placeholder="S E A R C H">
+                            <a href="#"><img src="img/search.svg" alt="서치 아이콘"></a>
+                        </div>
+                        </div>
+                    </li>
+                    </ul><!-- user_menu 둥 -->
+                </div><!-- .util end -->
+            
+        </div>
+    </header><!-- .header end -->
+
+    <!-- <main>
+        <section class="main_visual">
+            <div class="swiper mainVisual">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="img/visual-01.jpg" alt="르주르 제품 이미지 1"></div>
+                  <div class="swiper-slide"><img src="img/visual-02.jpg" alt="르주르 제품 이미지 2"></div>
+                </div>
+            </div>
+        </section>main_visual end
+    </main> -->
+
+    <main>
+        <section class="main_visual">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="./img/bg1.jpg" alt="배경1">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./img/bg2.jpg" alt="배경2">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./img/bg3.jpg" alt="배경3">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./img/bg4.jpg" alt="배경4">
+                  </div>
+                </div>
+              </div>
+        </section>
+    </main>
+
+    <section class="guide">
+        <div class="guide_wrap">
+            <div class="guide_item">
+                <p>JOIN US</p>
+                <p>회원가입 시 적립금 2,000원을 드려요.</p>
+            </div>
+
+            <div class="guide_item">
+                <p>REVIEW</p>
+                <p>리뷰를 남겨주시면 적립금을 드려요.</p>
+            </div>
+
+            <div class="guide_item">
+                <p>CONTENTS</p>
+                <p>다양한 콘텐츠를 통해서 Le Jour의 따뜻함을 느껴보세요.</p>
+            </div>
+        </div><!--guide_wrap end -->
+    </section> <!-- guide end -->
+</div>
+
+<section class="LeJour_item">
+    <h2 class="title">Le Jour's selection</h2>
+    <ul class="LeJour_menu">
+        <li class="active">세트</li>
+        <li>세제</li>
+        <li>섬유유연제</li>
+        <li>주방/탈취용품</li>
+        <li>욕실용품</li>
+        <li>세탁보조제</li>
+        <li>로션/크림</li>
+        <li>기프트 액세서리</li>
+    </ul>
+
+    <div class="swiper itemSwiper active">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세트01.jpg" alt="세트1">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                        </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+                <p class="sale">SALE</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour family set</p>
+                <p>르주르 패밀리 세트</p>
+                <div class="price">
+                    <p>102,000원 </p>
+                    <p>→</p>
+                    <strong>91,800원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세트02.jpg" alt="세트2">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+                <p class="sale">SALE</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour baby set</p>
+                <p>르주르 베이비 세트</p>
+                <div class="price">
+                    <p>53,000원 </p>
+                    <p>→</p>
+                    <strong>49,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세트03.jpg" alt="세트3">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+                <p class="sale">SALE</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour single set</p>
+                <p>르주르 싱글족 세트</p>
+                <div class="price">
+                    <p>49,000원 </p>
+                    <p>→</p>
+                    <strong>45,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+          
+          
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세트04.jpg" alt="세트1">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+                <p class="sale">SALE</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour kitchen set</p>
+                <p>르주르 키친 세트</p>
+                <div class="price">
+                    <p>32,000원 </p>
+                    <p>→</p>
+                    <strong>30,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세트05.jpg" alt="세트1">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+                <p class="sale">SALE</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour single set (500ml)</p>
+                <p> 르주르 싱글족 세트 (500ml)</p>
+                <div class="price">
+                    <p>36,500원 </p>
+                    <p>→</p>
+                    <strong>33,500원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세트06유향무향.jpg" alt="세트 유향">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+                <p class="sale">SALE</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Plain baby set</p>
+                <p>플레인 베이비 세트</p>
+                <div class="price">
+                    <p>53,000원 </p>
+                    <p>→</p>
+                    <strong>49,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세트06유향무향.jpg" alt="세트 무향">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+                <p class="sale">SALE</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Plain baby set (Unscented)</p>
+                <p> 플레인 베이비 세트 (무향)</p>
+                <div class="price">
+                    <p>53,000원 </p>
+                    <p>→</p>
+                    <strong>49,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세트07.jpg" alt="세트1">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+                <p class="sale">SALE</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Soft family set</p>
+                <p>소프트 패밀리 세트</p>
+                <div class="price">
+                    <p>102,000원 </p>
+                    <p>→</p>
+                    <strong>91,800원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세트08.jpg" alt="세트1">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+                <p class="sale">SALE</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Soft baby set</p>
+                <p>소프트 베이비 세트</p>
+                <div class="price">
+                    <p>53,000원 </p>
+                    <p>→</p>
+                    <strong>49,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세트01.jpg" alt="세트1">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+                <p class="sale">SALE</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Soft single set</p>
+                <p> 소프트 싱글족 세트</p>
+                <div class="price">
+                    <p>49,000원 </p>
+                    <p>→</p>
+                    <strong>45,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <a href="#" class="morebtn">MORE VIEW</a>
+      </div>
+    
+
+      <!-- 세제 -->
+      <div class="swiper itemSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세제/01.jpg" alt="세제1">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+                <img class="laundry" src="img/슬라이드img/중성세제.png" alt="중성세제">
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour laundry detergent for adult</p>
+                <p>르주르 일반 액체세제</p>
+                <div class="price">
+                    <strong>24,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세제/02.jpg" alt="세제2">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+                <img class="laundry" src="img/슬라이드img/중성세제.png" alt="중성세제">
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour laundry detergent for baby</p>
+                <p>르주르 유아 액체세제</p>
+                <div class="price">
+                    <strong>26,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세제/03.jpg" alt="세제3">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour laundry detergent for lady</p>
+                <p>르주르 여성 속옷액체세제</p>
+                <div class="price">
+                    <strong>28,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세제/04.png" alt="세제4" style="background-color: #CAC5B4;">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour washing powder for adult</p>
+                <p>르주르 일반 가루세제</p>
+                <div class="price">
+                    <strong>18,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세제/05.png" alt="세제5" style="background-color: #D3C4A2;">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour washing powder for baby</p>
+                <p>르주르 유아 가루세제</p>
+                <div class="price">
+                    <strong>19,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세제/06.jpg" alt="세제6">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+                <img class="laundry" src="img/슬라이드img/중성세제.png" alt="중성세제">
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>laundry detergent for adult (500ml)</p>
+                <p> 르주르 일반 액체세제(500ml)</p>
+                <div class="price">
+                    <strong>18,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세제/07.jpg" alt="세제7">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Plain laundry detergent for baby</p>
+                <p> 비누분 유아 액체세제 (프렌치 라벤더)</p>
+                <div class="price">
+                    <strong>26,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세제/07.jpg" alt="세제8">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Plain laundry detergent for baby (Unscented)</p>
+                <p>  비누분 유아 액체세제 (무향)</p>
+                <div class="price">
+                    <strong>26,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세제/08.jpg" alt="세제9">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+                <img class="laundry" src="img/슬라이드img/중성세제.png" alt="중성세제">
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Soft laundry detergent for adult</p>
+                <p>소프트 일반 액체세제 (프레시 가든)</p>
+                <div class="price">
+                    <strong>24,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세제/09.jpg" alt="세제10">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+                <img class="laundry" src="img/슬라이드img/중성세제.png" alt="중성세제">
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Soft laundry detergent for baby</p>
+                <p>소프트 유아 액체세제 (옐로우 시폰)</p>
+                <div class="price">
+                    <strong>26,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+        
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <a href="#" class="morebtn">MORE VIEW</a>
+      </div>   
+
+     <!-- 섬유유연제  -->
+     <div class="swiper itemSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/섬유유연제/01.jpg" alt="섬유유연제1">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+            <p class="best">BEST</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour fabric conditioner for adult</p>
+                <p> 르주르 일반 섬유유연제</p>
+                <div class="price">
+                    <strong>25,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/섬유유연제/02.jpg" alt="섬유유연제2">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+            <p class="best">BEST</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour fabric conditioner for baby</p>
+                <p>르주르 유아 섬유유연제</p>
+                <div class="price">
+                    <strong>27,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/섬유유연제/03.jpg" alt="섬유유연제3">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>fabric conditioner for adult (500ml)</p>
+                <p>르주르 일반 섬유유연제(500ml)</p>
+                <div class="price">
+                    <strong>18,500원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/섬유유연제/04.jpg" alt="섬유유연제4">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Plain fabric conditioner for baby</p>
+                <p>구연산 유아 섬유유연제 (코튼 캔디)</p>
+                <div class="price">
+                    <strong>27,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/섬유유연제/04.jpg" alt="섬유유연제5">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Plain fabric conditioner for baby (Unscented)</p>
+                <p>구연산 유아 섬유유연제 (무향)</p>
+                <div class="price">
+                    <strong>27,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/섬유유연제/05.jpg" alt="섬유유연제6">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Soft fabric conditioner for adult</p>
+                <p>소프트 일반 섬유유연제 (프레시 가든)</p>
+                <div class="price">
+                    <strong>25,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/섬유유연제/06.jpg" alt="섬유유연제7">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="best">BEST</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Soft fabric conditioner for baby</p>
+                <p>소프트 유아 섬유유연제 (옐로우 시폰)</p>
+                <div class="price">
+                    <strong>27,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/섬유유연제/07.jpg" alt="섬유유연제8">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="new">NEW</p>
+                <p class="plus">1 + 1</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour filter sheets (Sylve)</p>
+                <p>르주르 필터 시트 (쉴브)</p>
+                <div class="price">
+                    <strong>38,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/섬유유연제/08.png" alt="섬유유연제9">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="new">NEW</p>
+                <p class="plus">1 + 1</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour filter sheets (Lèvre)</p>
+                <p> 르주르 필터 시트 (레브르)</p>
+                <div class="price">
+                    <strong>38,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <a href="#" class="morebtn">MORE VIEW</a>
+      </div>
+
+      <!-- 주방/탈취 -->
+      <div class="swiper itemSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/주방탈취/01.jpg" alt="주방/탈취용품1">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+            <p class="new">NEW</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour room spray</p>
+                <p>르주르 룸 스프레이 (하타)</p>
+                <div class="price">
+                    <strong>18,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/주방탈취/02.jpg" alt="주방/탈취용품2">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+            <p class="best">BEST</p>
+            <p class="plus">1 + 1</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour dress perfume</p>
+                <p> 르주르 드레스 퍼퓸 (프렌치 라벤더)</p>
+                <div class="price">
+                    <strong>15,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/주방탈취/03.jpg" alt="주방/탈취용품3">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+            <p class="best">BEST</p>
+            <p class="plus">1 + 1</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour dress perfume</p>
+                <p> 르주르 드레스 퍼퓸 (플뢰르 코롱)</p>
+                <div class="price">
+                    <strong>15,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/주방탈취/04.jpg" alt="주방/탈취용품4">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+            <img class="kitchen" src="img/슬라이드img/중성세제.png" alt="중성세제">
+            <p class="new">NEW</p>
+            <p class="best">BEST</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour kitchen soap spray</p>
+                <p>스프레이 주방세제</p>
+                <div class="price">
+                    <strong>21,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/주방탈취/05.jpg" alt="주방/탈취용품5">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+            <img class="kitchen" src="img/슬라이드img/중성세제.png" alt="중성세제">
+            <p class="best">BEST</p>
+            <p class="plus">1 + 1</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour dish washing detergent</p>
+                <p>르주르 주방세제</p>
+                <div class="price">
+                    <strong>17,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/주방탈취/06.jpg" alt="주방/탈취용품6">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+            <p class="best">BEST</p>
+            <p class="plus">1 + 1</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour Dishwasher detergent</p>
+                <p>르주르 식기세척기 세제 (코랄 허니)</p>
+                <div class="price">
+                    <strong>17,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/주방탈취/07.jpg" alt="주방/탈취용품7">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+            <p class="best">BEST</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour kitchen washing cleaner</p>
+                <p>르주르 키친 워싱 클리너</p>
+                <div class="price">
+                    <strong>15,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/주방탈취/08.jpg" alt="주방/탈취용품8">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+            <p class="new">NEW</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour Kitchen paint remover</p>
+                <p>르주르 키친페인트 리무버</p>
+                <div class="price">
+                    <strong>28,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          
+          
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <a href="#" class="morebtn">MORE VIEW</a>
+      </div>
+
+      <!-- 욕실 -->
+
+      <div class="swiper itemSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/욕실/01.jpg" alt="욕실1">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+            <p class="new">NEW</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour hand wash</p>
+                <p>르주르 핸드워시</p>
+                <div class="price">
+                    <strong>18,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/욕실/02.png" alt="욕실2" style="background-color: #C6C2B0;">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+            <p class="new">NEW</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour bathroom cleanser</p>
+                <p>르주르 욕실 클렌저</p>
+                <div class="price">
+                    <strong>17,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <a href="#" class="morebtn">MORE VIEW</a>
+      </div>
+
+      <!-- 세탁보조제 -->
+
+      <div class="swiper itemSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세탁보조/01.png" alt="세탁보조" style="background-color: #D2C3A1;">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+            <p class="best">BEST</p>
+            <p class="plus">1 + 1</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour washing machine cleanser</p>
+                <p>르주르 세탁기 클렌저</p>
+                <div class="price">
+                    <strong>13,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/세탁보조/02.png" alt="세탁보조2" style="background-color: #BAB7A4;">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+            <p class="best">BEST</p>
+            <p class="sale">SALE</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour boil-wash cleaning</p>
+                <p>르주르 삶는 클리닝</p>
+                <div class="price">
+                    <p>14,000원 </p>
+                    <p>→</p>
+                    <strong>9,800원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/섬유유연제/07.jpg" alt="섬유유연제8">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="new">NEW</p>
+                <p class="plus">1 + 1</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour filter sheets (Sylve)</p>
+                <p>르주르 필터 시트 (쉴브)</p>
+                <div class="price">
+                    <strong>38,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/섬유유연제/08.png" alt="섬유유연제9">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+                <p class="new">NEW</p>
+                <p class="plus">1 + 1</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour filter sheets (Lèvre)</p>
+                <p> 르주르 필터 시트 (레브르)</p>
+                <div class="price">
+                    <strong>38,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <a href="#" class="morebtn">MORE VIEW</a>
+      </div>
+
+      <!-- 로션/크림 -->
+
+      <div class="swiper itemSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/그 외/01.jpg" alt="베이비로션">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="img_top">
+            <p class="best">BEST</p>
+            </div><!-- img_top end -->
+            <div class="item_text">
+                <p>Le Jour baby lotion</p>
+                <p>르주르 베이비 로션</p>
+                <div class="price">
+                    <strong>21,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <a href="#" class="morebtn">MORE VIEW</a>
+      </div>
+
+      <!-- 기프트 -->
+
+      <div class="swiper itemSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/그 외/02.jpg" alt="쇼핑백">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="item_text">
+                <p>Le Jour shopping bag</p>
+                <p> 르주르 쇼핑백(중)</p>
+                <div class="price">
+                    <strong>2,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+          <div class="swiper-slide">
+            <div class="img_set">
+                <img src="img/슬라이드img/그 외/03.jpg" alt="기프트박스">
+                <div class="img_icon">
+                    <a class="buy_now">
+                        <svg width="25" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 6H4C3.46957 6 2.96086 6.21071 2.58579 6.58579C2.21071 6.96086 2 7.46957 2 8V24C2 24.5304 2.21071 25.0391 2.58579 25.4142C2.96086 25.7893 3.46957 26 4 26H28C28.5304 26 29.0391 25.7893 29.4142 25.4142C29.7893 25.0391 30 24.5304 30 24V8C30 7.46957 29.7893 6.96086 29.4142 6.58579C29.0391 6.21071 28.5304 6 28 6ZM28 8V11H4V8H28ZM28 24H4V13H28V24ZM26 21C26 21.2652 25.8946 21.5196 25.7071 21.7071C25.5196 21.8946 25.2652 22 25 22H21C20.7348 22 20.4804 21.8946 20.2929 21.7071C20.1054 21.5196 20 21.2652 20 21C20 20.7348 20.1054 20.4804 20.2929 20.2929C20.4804 20.1054 20.7348 20 21 20H25C25.2652 20 25.5196 20.1054 25.7071 20.2929C25.8946 20.4804 26 20.7348 26 21ZM18 21C18 21.2652 17.8946 21.5196 17.7071 21.7071C17.5196 21.8946 17.2652 22 17 22H15C14.7348 22 14.4804 21.8946 14.2929 21.7071C14.1054 21.5196 14 21.2652 14 21C14 20.7348 14.1054 20.4804 14.2929 20.2929C14.4804 20.1054 14.7348 20 15 20H17C17.2652 20 17.5196 20.1054 17.7071 20.2929C17.8946 20.4804 18 20.7348 18 21Z" fill="#777777"/>
+                            </svg>
+                        <p>바로구매</p>
+                    </a><!-- buy_now end -->
+                    <a href="#"><img src="img/슬라이드img/Tote.svg" alt="장바구니"></a>
+                    <a href="#"><img src="img/슬라이드img/Heart.svg" alt="찜하기"></a>
+                </div><!-- img_top end -->
+            </div><!-- img_set end -->
+            <div class="item_text">
+                <p>Le Jour gift box</p>
+                <p>르주르 기프트 박스</p>
+                <div class="price">
+                    <strong>5,000원</strong>
+                </div><!-- price end -->
+            </div><!-- item_text end -->
+          </div>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <a href="#" class="morebtn">MORE VIEW</a>
+      </div>
+
+
+</section><!-- LeJour_item end -->
+
+
+<section class="event">
+    <p class="title">Event</p>
+    <div class="swiper eventSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/이벤트배너/01.jpg" alt="이벤트배너1">
+          </div>
+
+          <div class="swiper-slide">
+            <img src="img/이벤트배너/02.jpg" alt="이벤트배너2">
+          </div>
+
+          <div class="swiper-slide">
+            <img src="img/이벤트배너/03.jpg" alt="이벤트배너3">
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
+
+</section><!-- event end -->
+
+<section class="review">
+    <p class="title">Review</p>
+    <div class="swiper reviewSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img class="review_img" src="img/리뷰/01.png" alt="리뷰 이미지1">
+            <div class="review_text">
+                <p class="review_in">빠른 배송 잘 받았습니다^^ 아직 사용전이라 향기는 확인 못했지만, 
+                포장 푸니까 어느정도 ...</p>
+                <div class="review_info">
+                        <div class="left_text">
+                            <p>Le Jour filter sheets (Sylve)</p>
+                            <p>르주르 필터 시트 (쉴브)</p>
+                        </div><!-- left_text end -->
+                        <div class="right_img">
+                            <img src="img/star-fill.png" alt="리뷰 별점">
+                        </div><!-- right_img end -->
+                </div><!-- review_info end -->
+            </div><!-- review_text end -->
+          </div><!-- swiper-slide end -->
+
+          <div class="swiper-slide">
+            <img class="review_img" src="img/리뷰/02.png" alt="리뷰 이미지2">
+            <div class="review_text">
+                <p class="review_in">선물 주기 너무 좋아요 💙 감성 한스푼 ㅠㅠ</p>
+                <div class="review_info">
+                        <div class="left_text">
+                            <p>Le Jour single set</p>
+                            <p>르주르 싱글족 세트</p>
+                        </div><!-- left_text end -->
+                        <div class="right_img">
+                            <img src="img/star-fill.png" alt="리뷰 별점">
+                        </div><!-- right_img end -->
+                </div><!-- review_info end -->
+            </div><!-- review_text end -->
+          </div><!-- swiper-slide end -->
+
+          <div class="swiper-slide">
+            <img class="review_img" src="img/리뷰/03.png" alt="리뷰 이미지3">
+            <div class="review_text">
+                <p class="review_in">이뻐용 ㅎㅎㅎ 선물할땜 필수죠!!!</p>
+                <div class="review_info">
+                        <div class="left_text">
+                            <p>Le Jour shopping bag</p>
+                            <p>르주르 쇼핑백</p>
+                        </div><!-- left_text end -->
+                        <div class="right_img">
+                            <img src="img/star-fill.png" alt="리뷰 별점">
+                        </div><!-- right_img end -->
+                </div><!-- review_info end -->
+            </div><!-- review_text end -->
+          </div><!-- swiper-slide end -->
+
+          <div class="swiper-slide">
+            <img class="review_img" src="img/리뷰/04.png" alt="리뷰 이미지4">
+            <div class="review_text">
+                <p class="review_in">르주르 주방세제는 처음  구매했는데 세척도 잘 되고 너무 좋네요 :)  용기도 예뻐서 주방...</p>
+                <div class="review_info">
+                        <div class="left_text">
+                            <p>Le Jour shopping bag</p>
+                            <p>르주르 쇼핑백</p>
+                        </div><!-- left_text end -->
+                        <div class="right_img">
+                            <img src="img/star-fill.png" alt="리뷰 별점">
+                        </div><!-- right_img end -->
+                </div><!-- review_info end -->
+            </div><!-- review_text end -->
+          </div><!-- swiper-slide end -->
+
+          <div class="swiper-slide">
+            <img class="review_img" src="img/리뷰/05.png" alt="리뷰 이미지5">
+            <div class="review_text">
+                <p class="review_in">첫째 애기때부터 (2016년) 쭉 쓰던 거예요🤍</p>
+                <div class="review_info">
+                        <div class="left_text">
+                            <p>Le Jour baby set</p>
+                            <p>르주르 베이비 세트</p>
+                        </div><!-- left_text end -->
+                        <div class="right_img">
+                            <img src="img/star-fill.png" alt="리뷰 별점">
+                        </div><!-- right_img end -->
+                </div><!-- review_info end -->
+            </div><!-- review_text end -->
+          </div><!-- swiper-slide end -->
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
+
+</section><!-- review end -->
+
+<section class="sns">
+
+</section><!-- sns end -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 0,
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+    });
+
+    var swiper = new Swiper(".itemSwiper", {
+      slidesPerView: 5,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    var swiper = new Swiper(".eventSwiper", {
+      spaceBetween: 0,
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      speed : 1200,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    var swiper = new Swiper(".reviewSwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      speed : 1200,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+      
+  
+</body>
+
+</html>
