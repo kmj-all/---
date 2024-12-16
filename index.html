@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>르주르</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
      <link rel="stylesheet" href="css/style.css">
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- aos -->
      <script src="lib/jquery-3.7.1.min.js"></script>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
      <script>
 
         $(function(){
@@ -18,17 +19,25 @@
 
             });
 
-            $('.depth02_wrap').mouseleave(function(){
+            $('.gnb > li:nth-child(2)').mouseleave(function(){
 
-            $(this).stop().slideUp();
+            $('.depth02_wrap').stop().slideUp();
 
-            });
+            }); //3차메뉴
 
-            let search = $('.user_menu .search img');
+
+
+            let search = $('.user_menu .search svg');
 
             search.click(function(){
 
                 $('.search_box').stop().slideToggle();
+
+            //    if($('.depth02_wrap').css('display') == 'block'){
+            //     $('.depth02_wrap').slideUp();
+            //    };
+
+                
 
             }); //검색창
 
@@ -47,13 +56,6 @@
             }); //헤더 크기
 
         
-
-
-
-
-
-
-
             //아이템 슬라이드
 
             let menu = document.querySelectorAll('.LeJour_item .LeJour_menu > li');
@@ -78,10 +80,42 @@
 
                 });
 
-            }
+            };
+
+            //탑버튼
+            let topBtn = $('.top_btn');
+
+            topBtn.click(function(){
+
+                $('html, body').animate({
+
+                    scrollTop : 0
+                });
 
 
-           
+            });
+
+            let itemSection = $('.LeJour_item').offset().top;
+
+            $(window).scroll(function(){
+
+                let scrollBar = $(window).scrollTop();
+
+                if(scrollBar >= itemSection){
+                    topBtn.addClass('change');
+                }else if(itemSection >= scrollBar){
+                    topBtn.removeClass('change');
+                }
+
+            });
+
+
+
+
+
+           //aos
+
+           AOS.init();
 
 
         });
@@ -160,9 +194,18 @@
                     <ul class="user_menu">
                         <li><a href="#">LOGIN</a></li>
                         <li><a href="#">JOIN</a></li>
-                        <li><a href="#">CART<img src="img/icon-cart.png" alt="장바구니"></a></li>
+                        <li><a href="#">CART
+                            <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M29.5 8.675C29.3103 8.46212 29.0777 8.29189 28.8174 8.17554C28.5571 8.05918 28.2751 7.99935 27.99 8H22C22 6.4087 21.3678 4.88258 20.2426 3.75736C19.1174 2.63214 17.5913 2 16 2C14.4087 2 12.8825 2.63214 11.7573 3.75736C10.6321 4.88258 9.99997 6.4087 9.99997 8H4.00997C3.72655 8.00076 3.44647 8.06127 3.18801 8.17758C2.92955 8.29389 2.69851 8.46338 2.50997 8.675C2.32301 8.88583 2.1827 9.1338 2.09826 9.40264C2.01382 9.67148 1.98714 9.95513 2.01997 10.235L3.80247 25.235C3.86028 25.7237 4.09626 26.174 4.46525 26.4996C4.83425 26.8253 5.31035 27.0034 5.80247 27H26.2087C26.7008 27.0034 27.1769 26.8253 27.5459 26.4996C27.9149 26.174 28.1509 25.7237 28.2087 25.235L29.9912 10.235C30.0239 9.95504 29.997 9.67134 29.9123 9.40249C29.8277 9.13364 29.6872 8.88573 29.5 8.675ZM16 4C17.0608 4 18.0783 4.42143 18.8284 5.17157C19.5785 5.92172 20 6.93913 20 8H12C12 6.93913 12.4214 5.92172 13.1715 5.17157C13.9217 4.42143 14.9391 4 16 4ZM26.22 25C26.2163 25.0013 26.2123 25.0013 26.2087 25H5.78122L4.00997 10H9.99997V13C9.99997 13.2652 10.1053 13.5196 10.2929 13.7071C10.4804 13.8946 10.7348 14 11 14C11.2652 14 11.5195 13.8946 11.7071 13.7071C11.8946 13.5196 12 13.2652 12 13V10H20V13C20 13.2652 20.1053 13.5196 20.2929 13.7071C20.4804 13.8946 20.7348 14 21 14C21.2652 14 21.5195 13.8946 21.7071 13.7071C21.8946 13.5196 22 13.2652 22 13V10H28L26.22 25Z" fill="#555555"/>
+                                </svg>
+                            </a>    
+                        </li>
                         <li class="search">
-                            <a href="#"><img src="img/icon-search.png" alt="검색하기"></a>
+                            <div class="search_inner">
+                                <svg width="15" height="15" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M26.7073 25.2925L20.4485 19.035C22.2626 16.8572 23.1672 14.0638 22.9741 11.236C22.781 8.40814 21.5052 5.76361 19.412 3.85251C17.3188 1.9414 14.5694 0.910859 11.7357 0.975258C8.90201 1.03966 6.20225 2.19404 4.19802 4.19827C2.1938 6.20249 1.03941 8.90225 0.975014 11.7359C0.910614 14.5696 1.94116 17.319 3.85226 19.4122C5.76337 21.5054 8.40789 22.7813 11.2357 22.9743C14.0635 23.1674 16.8569 22.2628 19.0348 20.4488L25.2923 26.7075C25.3852 26.8005 25.4955 26.8742 25.6169 26.9244C25.7383 26.9747 25.8684 27.0006 25.9998 27.0006C26.1312 27.0006 26.2613 26.9747 26.3827 26.9244C26.5041 26.8742 26.6144 26.8005 26.7073 26.7075C26.8002 26.6146 26.8739 26.5043 26.9242 26.3829C26.9745 26.2615 27.0004 26.1314 27.0004 26C27.0004 25.8686 26.9745 25.7385 26.9242 25.6171C26.8739 25.4958 26.8002 25.3855 26.7073 25.2925ZM2.9998 12C2.9998 10.22 3.52764 8.47995 4.51657 6.99991C5.5055 5.51987 6.91111 4.36631 8.55565 3.68513C10.2002 3.00394 12.0098 2.82571 13.7556 3.17297C15.5014 3.52024 17.1051 4.37741 18.3638 5.63608C19.6224 6.89475 20.4796 8.4984 20.8269 10.2442C21.1741 11.9901 20.9959 13.7997 20.3147 15.4442C19.6335 17.0887 18.48 18.4943 16.9999 19.4833C15.5199 20.4722 13.7798 21 11.9998 21C9.61366 20.9974 7.32601 20.0483 5.63876 18.3611C3.95151 16.6738 3.00244 14.3862 2.9998 12Z" fill="#555555"/>
+                                    </svg>
+                            </div><!-- search_inner -->
                         <div class="search_box">
                             <div class="search_box_in">
                             <input type="text" placeholder="S E A R C H">
@@ -175,17 +218,6 @@
             
         </div>
     </header><!-- .header end -->
-
-    <!-- <main>
-        <section class="main_visual">
-            <div class="swiper mainVisual">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="img/visual-01.jpg" alt="르주르 제품 이미지 1"></div>
-                  <div class="swiper-slide"><img src="img/visual-02.jpg" alt="르주르 제품 이미지 2"></div>
-                </div>
-            </div>
-        </section>main_visual end
-    </main> -->
 
     <main>
         <section class="main_visual">
@@ -205,10 +237,17 @@
                   </div>
                 </div>
               </div>
+              <div class="discover_more">
+                <div class="more_scroll">
+                    <img src="img/scr-ani.png" alt="scr-ani">
+                </div><!--more_scroll end -->
+                <img src="img/scr-i.png" alt="scr-i">
+                <p>DISCOVER MORE</p>
+              </div><!--discover_more end -->
         </section>
     </main>
 
-    <section class="guide">
+    <section data-aos="fade-up" data-aos-duration="1200" class="guide">
         <div class="guide_wrap">
             <div class="guide_item">
                 <p>JOIN US</p>
@@ -228,7 +267,7 @@
     </section> <!-- guide end -->
 </div>
 
-<section class="LeJour_item">
+<section data-aos="fade-up" data-aos-duration="1200" class="LeJour_item">
     <h2 class="title">Le Jour's selection</h2>
     <ul class="LeJour_menu">
         <li class="active">세트</li>
@@ -1567,7 +1606,7 @@
 </section><!-- LeJour_item end -->
 
 
-<section class="event">
+<section data-aos="fade-up" data-aos-duration="1200" class="event">
     <p class="title">Event</p>
     <div class="swiper eventSwiper">
         <div class="swiper-wrapper">
@@ -1591,8 +1630,8 @@
 </section><!-- event end -->
 
 <section class="review">
-    <p class="title">Review</p>
-    <div class="swiper reviewSwiper">
+    <p data-aos="fade-up" data-aos-duration="1200" class="title">Review</p>
+    <div data-aos="fade-up" data-aos-duration="1500"  class="swiper reviewSwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <img class="review_img" src="img/리뷰/01.png" alt="리뷰 이미지1">
@@ -1683,8 +1722,8 @@
 </section><!-- review end -->
 
 <section class="sns">
-    <p class="title">#Instagram</p>
-    <ul class="sns_wrap">
+    <p data-aos="fade-up" data-aos-duration="1200" class="title">#Instagram</p>
+    <ul data-aos="fade-up" data-aos-duration="1500" class="sns_wrap">
         <li><a href="#"><img src="img/인스타그램이미지/01.png" alt="인스타그램이미지1"></a></li>
         <li><a href="#"><img src="img/인스타그램이미지/02.jpg" alt="인스타그램이미지2"></a></li>
         <li><a href="#"><img src="img/인스타그램이미지/03.jpg" alt="인스타그램이미지3"></a></li>
@@ -1693,6 +1732,175 @@
         <li><a href="#"><img src="img/인스타그램이미지/06.jpg" alt="인스타그램이미지6"></a></li>
     </ul><!-- sns_wrap end -->
 </section><!-- sns end -->
+
+<section class="notice">
+    <div class="notice_inner">
+        <div class="noticetext">
+            <div class="swiper noticeSwiper noticeitem">
+                <p class="sub_title">NOTICE</p>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><a href="#">[NOTICE] ★ 르주르 오프라인 입점 안내</a></div>
+                  <div class="swiper-slide"><a href="#">[NOTICE] ★ 르주르 대한아토피협회 추천 제품으로 선정</a></div>
+                  <div class="swiper-slide"><a href="#">[NOTICE] ★ 르주르 2024 올해의 브랜드 대상 영유아세제 부분 수상</a></div>
+                  <div class="swiper-slide"><a href="#">[NOTICE] ★ 르주르 카카오톡 플러스 친구 추가 EVENT</a></div>
+                  <div class="swiper-slide"><a href="#">[NOTICE] ★ 르주르 필터 시트 샘플 파우치 제공 이벤트 안내</a></div>
+                  <div class="swiper-slide"><a href="#">[NOTICE] ★ 택배비 인상 안내</a></div>
+                  <div class="swiper-slide"><a href="#">[NOTICE] ★ 르주르 홈페이지 리뉴얼로 인한 안내사항</a></div>
+                </div>
+                <svg class="arrow" width="81" height="12" viewBox="0 0 81 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M80.5303 6.53033C80.8232 6.23744 80.8232 5.76256 80.5303 5.46967L75.7574 0.696699C75.4645 0.403806 74.9896 0.403806 74.6967 0.696699C74.4038 0.989592 74.4038 1.46447 74.6967 1.75736L78.9393 6L74.6967 10.2426C74.4038 10.5355 74.4038 11.0104 74.6967 11.3033C74.9896 11.5962 75.4645 11.5962 75.7574 11.3033L80.5303 6.53033ZM0 6.75H80V5.25H0V6.75Z" fill="black"/>
+                    </svg>
+              </div><!-- swiper noticeSwiper -->
+              <div class="noticeitem_b">
+                <div class="noticeitem_l">
+                    <p class="info_title">고객센터</p>
+                    <p class="num">1522-8625</p>
+                    <p class="hour">
+                        운영시간  <span>AM 10:00 ~ PM 06:00 (주말 및 공휴일 휴무)</span> <br>
+                        점심시간  <span>PM 12:00 ~ PM 01:00</span>
+                    </p>
+                </div><!-- noticeitem_l -->
+                <div class="noticeitem_r">
+                    <p class="info_title">계좌안내</p>
+                    <p class="account_num">국민<span>670701-04-220781</span></p>
+                    <p class="account">예금주 르주르(주)</p>
+                    <div class="btn_box">
+                        <div class="q_box">
+                            <a href="#">Q&A</a>
+                            <svg class="arrow" width="40" height="12" viewBox="0 0 81 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M80.5303 6.53033C80.8232 6.23744 80.8232 5.76256 80.5303 5.46967L75.7574 0.696699C75.4645 0.403806 74.9896 0.403806 74.6967 0.696699C74.4038 0.989592 74.4038 1.46447 74.6967 1.75736L78.9393 6L74.6967 10.2426C74.4038 10.5355 74.4038 11.0104 74.6967 11.3033C74.9896 11.5962 75.4645 11.5962 75.7574 11.3033L80.5303 6.53033ZM0 6.75H80V5.25H0V6.75Z" fill="black"/>
+                                </svg>
+                        </div><!-- q_box -->
+                        <div class="faq_box">
+                            <a href="#">FAQ</a>
+                            <svg class="arrow" width="40" height="12" viewBox="0 0 81 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M80.5303 6.53033C80.8232 6.23744 80.8232 5.76256 80.5303 5.46967L75.7574 0.696699C75.4645 0.403806 74.9896 0.403806 74.6967 0.696699C74.4038 0.989592 74.4038 1.46447 74.6967 1.75736L78.9393 6L74.6967 10.2426C74.4038 10.5355 74.4038 11.0104 74.6967 11.3033C74.9896 11.5962 75.4645 11.5962 75.7574 11.3033L80.5303 6.53033ZM0 6.75H80V5.25H0V6.75Z" fill="black"/>
+                                </svg>
+                        </div><!-- faq_box -->
+                    </div><!-- btn_box -->
+                </div><!-- noticeitem_r -->
+              </div><!-- noticeitem_b -->
+        </div><!-- noticetext -->
+          <img class="noticeimg" src="img/footer/01.png" alt="안내이미지">
+    </div><!-- notice_inner -->
+</section><!-- notice end -->
+
+<div class="top_btn">
+    <img src="img/btnTop.png" alt="탑버튼">
+</div><!-- top_btn end -->
+
+
+<footer class="footer">
+    <div class="footer_inner">
+        <div class="footer_top">
+            <div class="logo">
+                <img src="img/footer/logo.png" alt="르주르 로고">
+                <p class="copyright">Copyrightⓒ All rights reserved by Le Jour</p>
+            </div><!-- logo end -->
+            <div class="footer_customer">
+                <p class="footer_title">
+                    Customer center
+                </p><!-- footer_title end -->
+                <ul class="footer_ul">
+                    <li>반품주소 : 광주광역시 광산구 수완로 73번길 17<br>
+                        4층(수완동, 리코빌딩)</li>
+                    <li>고객센터 : 1522-8625</li>
+                    <div class="li_group">
+                        <li>팩스번호 : 0504-035-3865</li>
+                        <li>운영시간 : AM 10:00~PM 06:00(주말 및 공휴일 휴무)</li>
+                        <li>점심시간 : PM 12:00~PM 01:00</li>
+                    </div><!-- li_group end -->
+                    <li>BANK INFO :  국민은행 670701-04-220781</li>
+                    <li>예금주 : 르주르(주)</li>
+                </ul><!-- footer_ul end -->
+            </div><!-- customer end -->
+        
+            <div class="footer_link">
+                <p class="footer_title">
+                    Links
+                </p><!-- footer_title end -->
+                <ul class="footer_ul">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보 취급방침</a></li>
+                    <li><a href="#">이용안내</a></li>
+                </ul><!-- footer_ul end -->
+            </div><!-- link end -->
+
+            <div class="footer_cs">
+                <p class="footer_title">
+                    CS Center
+                </p><!-- footer_title end -->
+                <ul class="footer_ul">
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Q&A</a></li>
+                </ul><!-- footer_ul end -->
+            </div><!-- cs end -->
+
+            <div class="footer_account">
+                <p class="footer_title">
+                    Account
+                </p><!-- footer_title end -->
+                <ul class="footer_ul">
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">아이디/비밀번호 찾기</a></li>
+                    <li><a href="#">멤버쉽</a></li>
+                </ul><!-- footer_ul end -->
+            </div><!-- account end -->
+
+            <div class="footer_story">
+                <p class="footer_title">
+                    Our Story
+                </p><!-- footer_title end -->
+                <ul class="footer_ul">
+                    <li><a href="#">브랜드 스토리</a></li>
+                    <li><a href="#">콘텐츠</a></li>
+                </ul><!-- footer_ul end -->
+            </div><!-- story end -->
+
+        </div><!-- footer_top end -->
+        <div class="footer_bottom">
+            <div class="footer_bottom_left">
+                <div class="footer_text_box">
+                    <span>르주르 주식회사</span><span>대표자 : 김건우</span>
+                </div><!-- footer_text_box end -->
+
+                <div class="footer_text_box">
+                    <span>개인정보취급관리자 : 김종석</span><span>이메일 : lejour90@naver.com</span>
+                </div><!-- footer_text_box end -->
+
+                <div class="footer_text_box">
+                    <span>주소 : 광주광역시 광산구 수완로73번길 17 3층 301호(수완동, 리코빌딩)</span>
+                    <span>사업자등록번호 : 412-87-00709 <a href="#">사업자번호조회 ></a></span>
+                    <span>통신판매업신고번호 : 제 2017-광주광산-0506 호</span>
+                </div><!-- footer_text_box end -->
+            </div><!-- footer_bottom left end -->
+            <div class="footer_bottom_right">
+                <div class="footer_sns">
+                    <a href="#">
+                        <svg class="insta" width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 10C14.8133 10 13.6533 10.3519 12.6666 11.0112C11.6799 11.6705 10.9108 12.6075 10.4567 13.7039C10.0026 14.8003 9.88378 16.0067 10.1153 17.1705C10.3468 18.3344 10.9182 19.4035 11.7574 20.2426C12.5965 21.0818 13.6656 21.6532 14.8295 21.8847C15.9933 22.1162 17.1997 21.9974 18.2961 21.5433C19.3925 21.0892 20.3295 20.3201 20.9888 19.3334C21.6481 18.3467 22 17.1867 22 16C21.9983 14.4092 21.3657 12.884 20.2408 11.7592C19.116 10.6343 17.5908 10.0017 16 10ZM16 20C15.2089 20 14.4355 19.7654 13.7777 19.3259C13.1199 18.8864 12.6072 18.2616 12.3045 17.5307C12.0017 16.7998 11.9225 15.9956 12.0769 15.2196C12.2312 14.4437 12.6122 13.731 13.1716 13.1716C13.731 12.6122 14.4437 12.2312 15.2196 12.0769C15.9956 11.9225 16.7998 12.0017 17.5307 12.3045C18.2616 12.6072 18.8864 13.1199 19.3259 13.7777C19.7654 14.4355 20 15.2089 20 16C20 17.0609 19.5786 18.0783 18.8284 18.8284C18.0783 19.5786 17.0609 20 16 20ZM22 3H10C8.14409 3.00199 6.36477 3.74012 5.05245 5.05245C3.74012 6.36477 3.00199 8.14409 3 10V22C3.00199 23.8559 3.74012 25.6352 5.05245 26.9476C6.36477 28.2599 8.14409 28.998 10 29H22C23.8559 28.998 25.6352 28.2599 26.9476 26.9476C28.2599 25.6352 28.998 23.8559 29 22V10C28.998 8.14409 28.2599 6.36477 26.9476 5.05245C25.6352 3.74012 23.8559 3.00199 22 3ZM27 22C27 23.3261 26.4732 24.5979 25.5355 25.5355C24.5979 26.4732 23.3261 27 22 27H10C8.67392 27 7.40215 26.4732 6.46447 25.5355C5.52678 24.5979 5 23.3261 5 22V10C5 8.67392 5.52678 7.40215 6.46447 6.46447C7.40215 5.52678 8.67392 5 10 5H22C23.3261 5 24.5979 5.52678 25.5355 6.46447C26.4732 7.40215 27 8.67392 27 10V22ZM24 9.5C24 9.79667 23.912 10.0867 23.7472 10.3334C23.5824 10.58 23.3481 10.7723 23.074 10.8858C22.7999 10.9994 22.4983 11.0291 22.2074 10.9712C21.9164 10.9133 21.6491 10.7704 21.4393 10.5607C21.2296 10.3509 21.0867 10.0836 21.0288 9.79264C20.9709 9.50166 21.0007 9.20006 21.1142 8.92597C21.2277 8.65189 21.42 8.41762 21.6666 8.2528C21.9133 8.08797 22.2033 8 22.5 8C22.8978 8 23.2794 8.15804 23.5607 8.43934C23.842 8.72064 24 9.10218 24 9.5Z" fill="#fff"/>
+                            </svg>
+                    </a>
+                    <a href="#">
+                        <svg class="facebook" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.77778 12.8V20H13.1358V12.9H15.4074L16 9.9H13.1358C13.1358 9.9 13.1358 8.5 13.1358 7.7C13.1358 7.4 13.2346 7 13.7284 7C14.4198 7 15.3086 7 15.3086 7V4C15.3086 4 13.8272 4 12.2469 4C11.2593 4 9.77778 5.3 9.77778 6.8C9.77778 8.3 9.77778 9.9 9.77778 9.9H8V12.9L9.77778 12.8Z" fill="#fff"/>
+                            </svg>
+                    </a>
+                    <a href="#">
+                        <svg class="youtube" width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M29.2913 8.69C29.1735 8.22919 28.9478 7.80298 28.6329 7.44654C28.318 7.09011 27.9228 6.81366 27.48 6.64C23.195 4.985 16.375 5 16 5C15.625 5 8.805 4.985 4.52 6.64C4.0772 6.81366 3.68204 7.09011 3.36712 7.44654C3.05219 7.80298 2.82653 8.22919 2.70875 8.69C2.385 9.9375 2 12.2175 2 16C2 19.7825 2.385 22.0625 2.70875 23.31C2.82636 23.771 3.05194 24.1975 3.36687 24.5542C3.68181 24.9108 4.07706 25.1875 4.52 25.3613C8.625 26.945 15.05 27 15.9175 27H16.0825C16.95 27 23.3787 26.945 27.48 25.3613C27.9229 25.1875 28.3182 24.9108 28.6331 24.5542C28.9481 24.1975 29.1736 23.771 29.2913 23.31C29.615 22.06 30 19.7825 30 16C30 12.2175 29.615 9.9375 29.2913 8.69ZM20.0737 16.815L15.0737 20.315C14.9242 20.4198 14.7488 20.4816 14.5666 20.4938C14.3844 20.5059 14.2023 20.4679 14.0401 20.384C13.878 20.3 13.7419 20.1732 13.6467 20.0174C13.5515 19.8615 13.5007 19.6826 13.5 19.5V12.5C13.5001 12.3171 13.5503 12.1377 13.6452 11.9813C13.7402 11.8249 13.8762 11.6976 14.0385 11.6132C14.2008 11.5287 14.3831 11.4904 14.5656 11.5024C14.7482 11.5144 14.9239 11.5763 15.0737 11.6813L20.0737 15.1813C20.2053 15.2735 20.3126 15.396 20.3868 15.5386C20.4609 15.6811 20.4996 15.8394 20.4996 16C20.4996 16.1606 20.4609 16.3189 20.3868 16.4614C20.3126 16.604 20.2053 16.7265 20.0737 16.8188V16.815Z" fill="#fff"/>
+                        </svg>
+                    </a>
+                </div><!-- footer_sns end -->
+                <img src="img/footer/pay.png" alt="INIPAY">
+            </div><!-- footer_bottom_right end -->
+        </div><!-- footer_bottom end -->
+    </div><!-- footer_inner end -->
+</footer><!-- footer end -->
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -1744,6 +1952,18 @@
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+    });
+
+    var swiper = new Swiper(".noticeSwiper", {
+      direction: "vertical",
+      slidesPerView: 1,
+      spaceBetween: 50,
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      speed : 1200,
     });
   </script>
       
